@@ -64,16 +64,12 @@ export default function Home() {
           <h2 className="text-2xl font-semibold tracking-tight mb-4">
             Professional Summary
           </h2>
-          <Card>
-            <CardContent className="pt-6">
-              <p className="text-muted-foreground leading-relaxed">
-                Add your professional summary here. Describe your experience,
-                expertise, and what makes you unique. Keep it concise but
-                impactful. This section should give employers a quick overview
-                of who you are and what you bring to the table.
-              </p>
-            </CardContent>
-          </Card>
+          <p className="text-muted-foreground leading-relaxed max-w-4xl">
+            Add your professional summary here. Describe your experience,
+            expertise, and what makes you unique. Keep it concise but
+            impactful. This section should give employers a quick overview
+            of who you are and what you bring to the table.
+          </p>
         </section>
 
         <Separator />
