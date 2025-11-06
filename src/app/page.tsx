@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { Mail, MapPin, Phone, Linkedin, Github } from "lucide-react"
+import { Mail, MapPin, Phone, Github } from "lucide-react"
 import { resumeData } from "@/lib/resume"
 
 export default function Home() {

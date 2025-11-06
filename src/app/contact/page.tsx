@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { Mail, Phone, MapPin, Linkedin, Github, Send } from "lucide-react"
+import { Mail, Phone, MapPin, Github, Send } from "lucide-react"
 import { resumeData } from "@/lib/resume"
 
 export default function ContactPage() {
