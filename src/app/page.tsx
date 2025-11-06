@@ -4,7 +4,7 @@ import { Mail, MapPin, Phone, Linkedin, Github } from "lucide-react"
 import { resumeData } from "@/lib/resume"
 
 export default function Home() {
-  const { personalInfo, professionalSummary, workExperience, skills } =
+  const { personalInfo, professionalSummary, workExperience, education, skills } =
     resumeData
 
   return (
@@ -89,6 +89,39 @@ export default function Home() {
                   <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside">
                     {job.responsibilities.map((responsibility, idx) => (
                       <li key={idx}>{responsibility}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <Separator />
+
+        {/* Education */}
+        <section>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">
+            Education
+          </h2>
+          <div className="space-y-6">
+            {education.map((edu, index) => (
+              <Card key={index}>
+                <CardHeader>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                    <CardTitle className="text-xl">{edu.degree}</CardTitle>
+                    <span className="text-sm text-muted-foreground">
+                      {edu.startDate ? `${edu.startDate} – ${edu.endDate}` : edu.endDate}
+                    </span>
+                  </div>
+                  <p className="text-sm font-medium text-muted-foreground">
+                    {edu.school} – {edu.location}
+                  </p>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside">
+                    {edu.highlights.map((highlight, idx) => (
+                      <li key={idx}>{highlight}</li>
                     ))}
                   </ul>
                 </CardContent>

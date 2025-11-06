@@ -21,10 +21,20 @@ export interface SkillCategory {
   skills: string[]
 }
 
+export interface Education {
+  degree: string
+  school: string
+  location: string
+  startDate: string | null
+  endDate: string
+  highlights: string[]
+}
+
 export interface ResumeData {
   personalInfo: PersonalInfo
   professionalSummary: string
   workExperience: WorkExperience[]
+  education: Education[]
   skills: SkillCategory[]
 }
 
@@ -81,6 +91,29 @@ export const resumeData: ResumeData = {
       ],
     },
   ],
+  education: [
+    {
+      degree: "Bachelor of Science in Computer Science (Incomplete)",
+      school: "Colorado State University",
+      location: "Fort Collins, CO",
+      startDate: "2021",
+      endDate: "2023",
+      highlights: [
+        "Coursework in Artificial Intelligence, Algorithms, and Software Engineering.",
+        "Earned strong grades and credits toward degree before relocating to pursue professional work.",
+      ],
+    },
+    {
+      degree: "High School Diploma",
+      school: "Legend High School",
+      location: "Parker, CO",
+      startDate: null,
+      endDate: "Graduated May 2021",
+      highlights: [
+        "Graduated with Honors",
+      ],
+    },
+  ],
   skills: [
     {
       name: "Languages & Frameworks",
@@ -104,7 +137,7 @@ export const resumeData: ResumeData = {
     },
     {
       name: "Other Skills",
-      skills: ["problem-solving", "cross-team collaboration", "system scalability", "documentation best practices"],
+      skills: ["problem-solving", "cross-team collaboration", "system scalability", "learning new technologies"],
     },
   ],
 }
