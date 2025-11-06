@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Professional Resume & Projects",
+  title: "Dallas Cohrs | Full Stack Developer",
   description: "Professional portfolio showcasing resume, projects, and contact information",
 };
 
