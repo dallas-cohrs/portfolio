@@ -82,16 +82,6 @@ export default function ContactPage() {
               <Separator />
               <div className="flex gap-4">
                 <a
-                  href={personalInfo.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm transition-colors hover:text-primary"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-5 w-5" />
-                  <span>LinkedIn</span>
-                </a>
-                <a
                   href={personalInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
