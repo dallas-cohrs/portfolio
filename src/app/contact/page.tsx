@@ -8,8 +8,10 @@ import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Mail, Phone, MapPin, Linkedin, Github, Send } from "lucide-react"
+import { resumeData } from "@/lib/resume"
 
 export default function ContactPage() {
+  const { personalInfo } = resumeData
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -60,27 +62,27 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <a
-                href="mailto:your.email@example.com"
+                href={`mailto:${personalInfo.email}`}
                 className="flex items-center gap-3 text-sm transition-colors hover:text-primary"
               >
                 <Mail className="h-5 w-5 text-muted-foreground" />
-                <span>your.email@example.com</span>
+                <span>{personalInfo.email}</span>
               </a>
               <a
-                href="tel:+1234567890"
+                href={`tel:${personalInfo.phone}`}
                 className="flex items-center gap-3 text-sm transition-colors hover:text-primary"
               >
                 <Phone className="h-5 w-5 text-muted-foreground" />
-                <span>+1 (234) 567-890</span>
+                <span>{personalInfo.phone}</span>
               </a>
               <div className="flex items-center gap-3 text-sm">
                 <MapPin className="h-5 w-5 text-muted-foreground" />
-                <span>Your Location</span>
+                <span>{personalInfo.location}</span>
               </div>
               <Separator />
               <div className="flex gap-4">
                 <a
-                  href="https://linkedin.com/in/yourprofile"
+                  href={personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm transition-colors hover:text-primary"
@@ -90,7 +92,7 @@ export default function ContactPage() {
                   <span>LinkedIn</span>
                 </a>
                 <a
-                  href="https://github.com/yourusername"
+                  href={personalInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm transition-colors hover:text-primary"
