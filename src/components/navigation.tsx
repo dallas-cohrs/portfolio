@@ -15,7 +15,7 @@ export function Navigation() {
   const pathname = usePathname()
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 py-0 sm:px-6 lg:px-8">
         <div className="mx-auto flex h-16 items-center justify-between max-w-6xl">
           <div className="flex gap-3 sm:gap-6">
