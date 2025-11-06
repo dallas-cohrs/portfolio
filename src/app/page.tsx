@@ -17,7 +17,7 @@ export default function Home() {
               {personalInfo.name}
             </h1>
             <p className="mt-2 text-xl text-muted-foreground">
-              {personalInfo.title} | {personalInfo.role}
+              {personalInfo.title}
             </p>
           </div>
 
@@ -40,15 +40,6 @@ export default function Home() {
               <MapPin className="h-4 w-4" />
               {personalInfo.location}
             </div>
-            <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 transition-colors hover:text-foreground"
-            >
-              <Linkedin className="h-4 w-4" />
-              LinkedIn
-            </a>
             <a
               href={personalInfo.github}
               target="_blank"

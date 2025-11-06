@@ -1,11 +1,9 @@
 export interface PersonalInfo {
   name: string
   title: string
-  role: string
   email: string
   phone: string
   location: string
-  linkedin: string
   github: string
 }
 
@@ -32,55 +30,81 @@ export interface ResumeData {
 
 export const resumeData: ResumeData = {
   personalInfo: {
-    name: "Your Name",
-    title: "Your Title",
-    role: "Your Role",
-    email: "your.email@example.com",
-    phone: "+1 (234) 567-890",
-    location: "Your Location",
-    linkedin: "https://linkedin.com/in/yourprofile",
-    github: "https://github.com/yourusername",
+    name: "Dallas Cohrs",
+    title: "Full Stack Developer",
+    email: "dallas.cohrs@gmail.com",
+    phone: "+1 (303) 909-2640",
+    location: "Denver, CO",
+    github: "https://github.com/dallas-cohrs",
   },
   professionalSummary:
-    "Add your professional summary here. Describe your experience, expertise, and what makes you unique. Keep it concise but impactful. This section should give employers a quick overview of who you are and what you bring to the table.",
+    "Curious and dedicated software developer with experience in programming, data systems, and cloud-based applications. Adept at solving complex problems and delivering clear, reliable results in collaborative environments. Able to quickly learn and implement new technologies.",
   workExperience: [
     {
-      title: "Job Title",
-      company: "Company Name",
-      location: "Location",
-      startDate: "Jan 2020",
-      endDate: null, // Present
+      title: "Full Stack Developer",
+      company: "Autotex Pty Ltd",
+      location: "Sydney, Australia",
+      startDate: "Apr 2025",
+      endDate: "Oct 2025", // Present
       responsibilities: [
-        "Key achievement or responsibility",
-        "Another significant contribution",
-        "Important project or initiative you led",
+        "Built cloud-based tools for managing large automotive inventories.",
+        "Maintained and optimized a database of more than 3 million auto parts across Australia.",
+        "Upgraded ADEN, a database platform used by auto suppliers, wreckers, and resellers.",
+        "Worked directly with national clients like Sydney Tools to improve operations and data workflows.",
+        "Managed full-stack development and database integration tasks independently."
       ],
     },
     {
-      title: "Previous Job Title",
-      company: "Previous Company",
-      location: "Location",
-      startDate: "Jan 2018",
-      endDate: "Dec 2019",
+        title: "Behavioral Technician",
+        company: "Behavioral Innovations",
+        location: "Centennial, CO",
+        startDate: "Nov 2024",
+        endDate: "Feb 2025",
+        responsibilities: [
+          "Delivered one-on-one behavioral therapy to children diagnosed with ASD.",
+          "Applied the principles of Applied Behavioral Analysis (ABA) to promote measurable developmental progress.",
+          "Implemented individualized treatment plans in collaboration with clinical supervisors.",
+          "Fostered strong relationships with clients and families through consistent communication and advocacy."
+        ],
+    },
+    {
+      title: "CAD Engineer",
+      company: "Advanced Circuits",
+      location: "Aurora, CO",
+      startDate: "May 2023",
+      endDate: "Mar 2024",
       responsibilities: [
-        "Accomplishment or responsibility",
-        "Project or initiative",
-        "Skills demonstrated",
+        "Used and maintained proprietary FreeDFM software to prepare accurate PCB quotes.",
+        "Worked closely with customers to refine designs and ensure smooth manufacturing.",
+        "Helped troubleshoot issues in circuit layouts and guided improvements for better production results.",
+        "Partnered with engineers and production teams to verify specifications and maintain quality standards."
       ],
     },
   ],
   skills: [
     {
-      name: "Programming Languages",
-      skills: ["JavaScript", "TypeScript", "Python", "Java"],
+      name: "Languages & Frameworks",
+      skills: ["JavaScript", "TypeScript", "Python", "React", "Next.js", "React Native", "Expo"],
     },
     {
-      name: "Frameworks & Libraries",
-      skills: ["React", "Next.js", "Node.js", "Express"],
+      name: "Cloud & Deployment",
+      skills: ["Firebase", "Vercel", "Render", "AWS (EC2, S3)", "Cloudflare"],
     },
     {
-      name: "Tools & Technologies",
-      skills: ["Git", "Docker", "AWS", "PostgreSQL"],
+      name: "Web & App Development",
+      skills: ["REST APIs", "full-stack architecture", "UI/UX design", "mobile-first interfaces"],
+    },
+    {
+      name: "Database & Data Management",
+      skills: ["PostgreSQL", "MongoDB", "data modeling", "optimization"],
+    },
+    {
+      name: "Tools & Version Control",
+      skills: ["Git", "GitHub", "VS Code", "CI/CD workflows"],
+    },
+    {
+      name: "Other Skills",
+      skills: ["problem-solving", "cross-team collaboration", "system scalability", "documentation best practices"],
     },
   ],
 }
