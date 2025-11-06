@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Dallas Cohrs | Full Stack Developer",
   description: "Professional portfolio showcasing resume, projects, and contact information",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
