@@ -7,37 +7,52 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
+import { toast } from "sonner"
 import { Mail, Phone, MapPin, Github, Send } from "lucide-react"
 import { resumeData } from "@/lib/resume"
 
 export default function ContactPage() {
   const { personalInfo } = resumeData
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-
-    const formData = new FormData(e.currentTarget)
+  
+    const form = e.currentTarget // ✅ store the form reference here
+    const formData = new FormData(form)
     const data = {
       name: formData.get("name"),
+      email: formData.get("email"),
       company: formData.get("company"),
       subject: formData.get("subject"),
       message: formData.get("message"),
     }
-
-    // TODO: Implement actual form submission (e.g., API route, email service)
-    // For now, simulate submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    e.currentTarget.reset()
-
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000)
+  
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+  
+      if (!response.ok) throw new Error("Network response was not ok")
+  
+      setIsSubmitting(false)
+      form.reset()
+  
+      toast.success("Message sent successfully!", {
+        description: "I’ll get back to you soon. Thanks for reaching out!",
+      })
+    } catch (error) {
+      console.error(error)
+      setIsSubmitting(false)
+      toast.error("Something went wrong", {
+        description: "Please try again or email me directly.",
+      })
+    }
   }
+  
 
   return (
     <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
@@ -119,6 +134,17 @@ export default function ContactPage() {
                 </div>
 
                 <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="Your email"
+                  />
+                </div>
+
+                <div className="space-y-2">
                   <Label htmlFor="company">Company</Label>
                   <Input
                     id="company"
@@ -152,12 +178,6 @@ export default function ContactPage() {
                     disabled={isSubmitting}
                   />
                 </div>
-
-                {isSubmitted && (
-                  <div className="rounded-md bg-primary/10 p-3 text-sm text-primary">
-                    Thank you for your message! I&apos;ll get back to you soon.
-                  </div>
-                )}
 
                 <Button
                   type="submit"
